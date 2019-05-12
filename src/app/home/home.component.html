@@ -1,0 +1,52 @@
+<div class="container">
+    <mat-card class="card">
+    <form class="form" (submit)='addRestaurant($event)'>
+        <mat-form-field>
+          <input matInput placeholder="name" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput placeholder="type of food" required>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="review" required>
+          </mat-form-field>
+          <mat-form-field>
+              <input matInput placeholder="rating" required>
+            </mat-form-field>
+        <button class="btn" type="submit" mat-raised-button color="primary">Add to my list</button>
+      </form>
+    </mat-card> 
+</div>
+
+<div class="container">
+  <div *ngIf="restaurantData">
+    <div *ngFor="let restaurant of restaurantData">
+      <mat-card class="card">
+        <mat-card-content>
+          <!-- <h3>{{restaurant.name}}</h3>
+          <h3>{{restaurant.typeOfFood}}</h3>
+          <h3>{{restaurant.review}}</h3>
+          <h3>{{restaurant.rating}}</h3>
+          <h3>{{restaurant.id}}</h3> -->
+          <table>
+            <tr class="first">
+              <th>Restaurant Name</th>
+              <th>Type of Food</th>
+              <th>Review</th>
+              <th>rating</th>
+            </tr>
+
+            <tr>
+              <th>{{restaurant.name}}</th>
+              <th>{{restaurant.typeOfFood}}</th>
+              <th>{{restaurant.review}}</th>
+              <th>{{restaurant.rating}}</th>
+            </tr>
+          </table>
+          <a href="#" (click)="deleteRest($event)" class="del-btn"><i class="fas fa-trash-alt" id="{{restaurant.id}}"></i></a>
+        </mat-card-content>
+      </mat-card>       
+    </div>
+  </div>
+</div>

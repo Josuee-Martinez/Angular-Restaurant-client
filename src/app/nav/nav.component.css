@@ -1,0 +1,17 @@
+mat-toolbar {
+  background-color: rgb(153, 216, 245);
+}
+
+.ex {
+  flex: 1 1 auto;
+}
+
+a {
+  padding: 1em;
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff;
+}

@@ -1,0 +1,26 @@
+<!-- 
+<div class="container">
+  <form (submit)='login($event)'> 
+    <label for="username"></label>
+    <br>
+    <input name="username" type="text">
+    <br>
+    <label for="password"></label>
+    <br>
+    <input name="password" type="text">
+    <br>
+    <button type='submit'>get</button>
+  </form>
+</div> -->
+<div class="container">
+  <form class="form" (submit)='login($event)'>
+    <mat-form-field>
+      <input matInput placeholder="username" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="password" required>
+    </mat-form-field>
+    <button class="btn" type="submit" mat-raised-button color="primary">Login</button>
+  </form>
+</div>
