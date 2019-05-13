@@ -1,8 +1,11 @@
-form {
+
+
+mat-card {
   margin-top: 10em;
   padding: 5em;
-  border: 1px solid black;
+  background-color: #F4F4F4;
 }
+
 
 mat-form-field {
   width: 100%;

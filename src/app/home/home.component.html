@@ -1,3 +1,5 @@
+<a href="" class="logout" (click)="logOut($event)"><i class="fas fa-sign-out-alt"></i></a>
+
 <div class="container">
     <mat-card class="card">
     <form class="form" (submit)='addRestaurant($event)'>
@@ -22,6 +24,8 @@
 <div class="container">
   <div *ngIf="restaurantData">
     <div *ngFor="let restaurant of restaurantData">
+      
+      <div>
       <mat-card class="card">
         <mat-card-content>
           <!-- <h3>{{restaurant.name}}</h3>
@@ -46,7 +50,43 @@
           </table>
           <a href="#" (click)="deleteRest($event)" class="del-btn"><i class="fas fa-trash-alt" id="{{restaurant.id}}"></i></a>
         </mat-card-content>
-      </mat-card>       
+        <hr class="horizontal">
+            <mat-card class="card">
+                    <mat-form-field class="slim">
+                      <input matInput placeholder="update name" required id="upname">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field class="slim">
+                      <input matInput placeholder="update type of food" required id="upfood">
+                    </mat-form-field>
+                    <mat-form-field class="slim">
+                        <input matInput placeholder="update review" required id="upreview">
+                      </mat-form-field>
+                      <mat-form-field class="slim">
+                          <input matInput placeholder="update rating" required id="uprating">
+                        </mat-form-field>
+                        <br>
+                        <!-- <button class="btn" type="submit" mat-raised-button color="primary" id="{{restaurant.id}}">Add to my list</button> -->
+                    <a  href="#" type="submit" class="edit-btn" (click)="updateRest($event)"><i class="fas fa-edit" id="{{restaurant.id}}"></i></a>
+        <!-- <button (click)="updateRest($event)" class="btn" type="submit" mat-raised-button color="primary" id="{{restaurant.id}}">Add to my list</button> -->
+
+                </mat-card> 
+      </mat-card>    
+
+        </div>
+        
     </div>
   </div>
 </div>
+
+
+<!-- <label for="name">Restaurant Name</label>
+<input type="text" id="name">
+<br>
+<input type="text">
+<br>
+<input type="text">
+<br>
+<input type="text">
+<br>
+<a href="#" (click)="updateRest($event)" class="edit-btn"><i class="fas fa-edit" id="{{restaurant.id}}"></i></a> -->

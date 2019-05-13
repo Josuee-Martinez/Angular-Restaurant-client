@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../auth.service';
 import {TokenService} from '../token.service';
+import {Router} from '@angular/router';
+
+
 
 @Component({
   selector: 'app-home',
@@ -8,15 +11,15 @@ import {TokenService} from '../token.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  ids: number;
-  names: string;
-  ratings: number;
-  typeoffoods: string; 
-  reviews: string;
+  // ids: number;
+  // names: string;
+  // ratings: number;
+  // typeoffoods: string; 
+  // reviews: string;
 
   restaurantData: Object;
 
-  constructor(private authservice: AuthService, private tokenservice: TokenService) { }
+  constructor(private authservice: AuthService, private tokenservice: TokenService, private router: Router) { }
 
   ngOnInit() {
     this.getrest();
@@ -38,16 +41,17 @@ export class HomeComponent implements OnInit {
     }).then((res) => {
       console.log(res.json().then((resp) => {
         console.log(resp);
-        this.names = resp.restaurantdata.name;
-        this.typeoffoods = resp.restaurantdata.typeOfFood;
-        this.reviews = resp.restaurantdata.review;
-        this.ratings = resp.restaurantdata.rating;
+        // this.names = resp.restaurantdata.name;
+        // this.typeoffoods = resp.restaurantdata.typeOfFood;
+        // this.reviews = resp.restaurantdata.review;
+        // this.ratings = resp.restaurantdata.rating;
+        this.getrest()
       })); 
 
     })
-    this.getrest()
     e.preventDefault();  
   }
+
 
   getrest() {
     fetch('http://localhost:3000/user/restaurant', {
@@ -76,5 +80,30 @@ export class HomeComponent implements OnInit {
     })
     e.preventDefault()
   }
+
+  updateRest(e) {
+    let updatedname = (<HTMLInputElement>document.getElementById('upname')).value;
+    let updatedfood = (<HTMLInputElement>document.getElementById('upfood')).value;
+    let updatedreview = (<HTMLInputElement>document.getElementById('upreview')).value;
+    let updatedrating= (<HTMLInputElement>document.getElementById('uprating')).value;
+    
+    fetch(`http://localhost:3000/user/restaurant/${e.target.id}`, {
+          method: 'PUT',
+          body: JSON.stringify({restaurant: {id: e.target.id, name: updatedname, typeOfFood: updatedfood, review: updatedreview, rating: updatedrating}}),
+          headers: new Headers({
+            'Content-Type': 'application/json',
+            'Authorization': this.tokenservice.token
+          }) 
+        }).then((res) => {
+          console.log(res);
+          this.getrest()       
+        })
+    e.preventDefault() 
+  }
+
+  logOut(e) {
+    localStorage.clear()
+  }
+
 
 }

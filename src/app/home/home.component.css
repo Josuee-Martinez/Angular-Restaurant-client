@@ -40,3 +40,27 @@ tr, th{
   color: red;
   font-size: 1.5em;
 }
+
+.edit-btn {
+  color: green;
+  font-size: 1.5em;
+}
+
+a {
+  padding: 1em;
+  margin: 1em;
+}
+
+.horizontal {
+  border: 2px solid rgb(153, 216, 245);
+}
+
+.slim {
+  width: 60%;
+}
+
+.logout {
+  font-size: 2em;
+  float: right;
+  color: red;
+}

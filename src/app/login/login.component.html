@@ -13,14 +13,17 @@
   </form>
 </div> -->
 <div class="container">
-  <form class="form" (submit)='login($event)'>
-    <mat-form-field>
-      <input matInput placeholder="username" required>
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-      <input matInput placeholder="password" required>
-    </mat-form-field>
-    <button class="btn" type="submit" mat-raised-button color="primary">Login</button>
-  </form>
+  <mat-card>
+
+    <form class="form" (submit)='login($event)'>
+      <mat-form-field>
+        <input matInput placeholder="username" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput placeholder="password" required>
+      </mat-form-field>
+      <button class="btn" type="submit" mat-raised-button color="primary">Login</button>
+    </form>
+  </mat-card>
 </div>
