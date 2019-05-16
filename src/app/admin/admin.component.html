@@ -1,8 +1,7 @@
 <div class="container">
-  <h3>{{loginError}}</h3>
   <mat-card>
-
-    <form class="form" (submit)='login($event)'>
+  
+    <form class="form" (submit)='admin($event)'>
       <mat-form-field>
         <input matInput placeholder="username" required>
       </mat-form-field>
@@ -10,7 +9,11 @@
       <mat-form-field>
         <input matInput placeholder="password" required>
       </mat-form-field>
-      <button class="btn" type="submit" mat-raised-button color="primary">Login</button>
+      <br>
+      <!-- <mat-form-field>
+        <input matInput placeholder="admin" >
+      </mat-form-field> -->
+      <button class="btn" type="submit" mat-raised-button color="primary">Signup</button>
     </form>
   </mat-card>
 </div>

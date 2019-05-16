@@ -31,11 +31,11 @@ export class SignupComponent implements OnInit {
       headers: new Headers({
         'Content-Type': 'application/json'
       })
-    }).then(res => res.json()).then((data) => {
+    }).then((res) => res.json()).then((data) => {
        
       this.tokenservice.token = data.sessionToken;
        localStorage.setItem('token', this.tokenservice.token)
-       console.log(this.tokenservice.token);
+       console.log(this.tokenservice.token, data);
        
      }).then(() => {
        this.loggedIn = true;

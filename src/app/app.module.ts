@@ -18,6 +18,9 @@ import { AboutComponent } from './about/about.component';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
 import { NavComponent } from './nav/nav.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminboardComponent } from './adminboard/adminboard.component';
+import { AdminsigninComponent } from './adminsignin/adminsignin.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,9 @@ import { NavComponent } from './nav/nav.component';
     HomeComponent,
     AboutComponent,
     NavComponent,
+    AdminComponent,
+    AdminboardComponent,
+    AdminsigninComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,35 @@
+<a href="" class="logout" (click)="logOut($event)"><i class="fas fa-sign-out-alt"></i></a>
+<div class="container">
+  <div *ngIf="restaurantData">
+    <div *ngFor="let restaurant of restaurantData">
+      <mat-card class="card">
+        <mat-card-content>
+          <!-- <h3>{{restaurant.name}}</h3>
+          <h3>{{restaurant.typeOfFood}}</h3>
+          <h3>{{restaurant.review}}</h3>
+          <h3>{{restaurant.rating}}</h3>
+          <h3>{{restaurant.id}}</h3> -->
+          <table>
+            <tr class="first">
+              <th>Restaurant Name</th>
+              <th>Type of Food</th>
+              <th>Review</th>
+              <th>rating</th>
+              <th>user id</th>
+            </tr>
+
+            <tr>
+              <th>{{restaurant.name}}</th>
+              <th>{{restaurant.typeOfFood}}</th>
+              <th>{{restaurant.review}}</th>
+              <th>{{restaurant.rating}}</th>
+              <th>{{restaurant.userId}}</th>
+            </tr>
+          </table>
+          <a href="#" (click)="deleteItem($event)" class="del-btn"><i class="fas fa-trash-alt" id="{{restaurant.id}}"></i></a>
+        </mat-card-content>
+        </mat-card>
+        </div>
+        </div>
+        </div>
+    

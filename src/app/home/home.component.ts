@@ -3,8 +3,6 @@ import {AuthService} from '../auth.service';
 import {TokenService} from '../token.service';
 import {Router} from '@angular/router';
 
-
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -54,6 +52,7 @@ export class HomeComponent implements OnInit {
 
 
   getrest() {
+    
     fetch('http://localhost:3000/user/restaurant', {
       method: 'GET',
       headers: new Headers({
@@ -82,10 +81,10 @@ export class HomeComponent implements OnInit {
   }
 
   updateRest(e) {
-    let updatedname = (<HTMLInputElement>document.getElementById('upname')).value;
-    let updatedfood = (<HTMLInputElement>document.getElementById('upfood')).value;
-    let updatedreview = (<HTMLInputElement>document.getElementById('upreview')).value;
-    let updatedrating= (<HTMLInputElement>document.getElementById('uprating')).value;
+    let updatedname = e.target.elements[0].value;
+    let updatedfood = e.target.elements[1].value;
+    let updatedreview = e.target.elements[2].value;
+    let updatedrating= e.target.elements[3].value;
     
     fetch(`http://localhost:3000/user/restaurant/${e.target.id}`, {
           method: 'PUT',
@@ -98,12 +97,12 @@ export class HomeComponent implements OnInit {
           console.log(res);
           this.getrest()       
         })
+    console.log(updatedname);
     e.preventDefault() 
   }
 
   logOut(e) {
     localStorage.clear()
   }
-
 
 }

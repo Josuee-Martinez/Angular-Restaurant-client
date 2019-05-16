@@ -2,12 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-adminsignin',
+  templateUrl: './adminsignin.component.html',
+  styleUrls: ['./adminsignin.component.css']
 })
-export class LoginComponent implements OnInit {
-  token = '';
+export class AdminsigninComponent implements OnInit {
   loginError;
 
   constructor(private router: Router) { }
@@ -15,16 +14,15 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  login(e) {
+    signin(e) {
     e.preventDefault();
     let username = e.target.elements[0].value;
     let password = e.target.elements[1].value;
-    let admin = e.target.elements[2].value;
-
-
-    fetch('http://localhost:3000/user/signin', {
+    // let admin = e.target.elements[2].value;
+      
+    fetch('http://localhost:3000/admin/signinadmin', {
       method: 'POST',
-      body: JSON.stringify({user: {username: username, password: password, admin: admin}}),
+      body: JSON.stringify({admin: {username: username, password: password}}),
       headers: new Headers({
         'Content-Type': 'application/json'
       })
@@ -36,18 +34,14 @@ export class LoginComponent implements OnInit {
             this.loginError = '';
           }, 4000);
         } else {
-          console.log(data);
-          this.token = data.sessionToken;
+          // this.token = data.sessionToken;
           localStorage.setItem('token', data.sessionToken)
-          console.log(this.token);
+          // console.log(this.token);
           
-          this.router.navigate(['home']);
+            this.router.navigate(['adminboard']);
+           // this.router.navigate(['home']);
         }
-      }).catch((err) => {
-        console.log(err);
-        
       })
     })
   }
-
 }

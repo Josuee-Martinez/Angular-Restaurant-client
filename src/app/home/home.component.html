@@ -51,25 +51,25 @@
           <a href="#" (click)="deleteRest($event)" class="del-btn"><i class="fas fa-trash-alt" id="{{restaurant.id}}"></i></a>
         </mat-card-content>
         <hr class="horizontal">
-            <mat-card class="card">
+              <mat-card class="card">
+              <form (submit)="updateRest($event)" id="{{restaurant.id}}">
                     <mat-form-field class="slim">
-                      <input matInput placeholder="update name" required id="upname">
+                      <input matInput placeholder="update name">
                     </mat-form-field>
                     <br>
                     <mat-form-field class="slim">
-                      <input matInput placeholder="update type of food" required id="upfood">
+                      <input matInput placeholder="update type of food">
                     </mat-form-field>
                     <mat-form-field class="slim">
-                        <input matInput placeholder="update review" required id="upreview">
+                        <input matInput placeholder="update review">
                       </mat-form-field>
                       <mat-form-field class="slim">
-                          <input matInput placeholder="update rating" required id="uprating">
+                          <input matInput placeholder="update rating">
                         </mat-form-field>
                         <br>
-                        <!-- <button class="btn" type="submit" mat-raised-button color="primary" id="{{restaurant.id}}">Add to my list</button> -->
-                    <a  href="#" type="submit" class="edit-btn" (click)="updateRest($event)"><i class="fas fa-edit" id="{{restaurant.id}}"></i></a>
-        <!-- <button (click)="updateRest($event)" class="btn" type="submit" mat-raised-button color="primary" id="{{restaurant.id}}">Add to my list</button> -->
-
+                        <input type="submit" value="edit">
+                      </form >
+                       
                 </mat-card> 
       </mat-card>    
 

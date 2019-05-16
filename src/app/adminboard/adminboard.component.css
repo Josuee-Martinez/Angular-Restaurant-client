@@ -1,0 +1,66 @@
+form {
+  margin-top: 5em;
+  padding: 1em;
+}
+
+mat-form-field {
+  width: 100%;
+  /* padding: .5em; */
+  /* margin-top: 5em; */
+}
+
+.btn {
+  background-color: rgb(153, 216, 245);
+  color: #000;
+  padding: .5em 4em .5em 4em;
+}
+
+.card {
+  background-color: #f4f4f4;
+  margin-top: 1em;
+}
+
+.left {
+  float: left;
+}
+
+mat-card-content {
+  display: inline-block;
+}
+
+tr, th{
+ padding: 20px;
+}
+
+.first {
+  color: rgb(153, 216, 245);
+}
+
+.del-btn {
+  color: red;
+  font-size: 1.5em;
+}
+
+.edit-btn {
+  color: green;
+  font-size: 1.5em;
+}
+
+a {
+  padding: 1em;
+  margin: 1em;
+}
+
+.horizontal {
+  border: 2px solid rgb(153, 216, 245);
+}
+
+.slim {
+  width: 60%;
+}
+
+.logout {
+  font-size: 2em;
+  float: right;
+  color: red;
+}
