@@ -31,20 +31,21 @@ export class AdminboardComponent implements OnInit {
     })   
   }
 
-  // deleteItem(e) {
-  //   fetch(`http://localhost:3000/user/restaurant/deleteall/${e.target.id}`, {
-  //     method: 'DELETE',
-  //     body: JSON.stringify({restaurant: {id: e.target.id}, user: {id: e.target.id}}),
-  //     headers: new Headers({
-  //       'Content-Type': 'application/json',
-  //       'Authorization': this.tokenservice.token
-  //     }) 
-  //   }).then((res) => {
-  //     console.log(res)
-  //   })
-  //   console.log(e.target.id)
-  //   e.preventDefault()
-  // }
+  deleteItem(e) {
+    fetch(`http://localhost:3000/user/restaurant/deleteadmin/${e.target.id}`, {
+      method: 'DELETE',
+      body: JSON.stringify({restaurant: {id: e.target.id}}),
+      headers: new Headers({
+        'Content-Type': 'application/json',
+        'Authorization': this.tokenservice.token
+      }) 
+    }).then((res) => {
+      console.log(res)
+      this.getAll();
+    })
+    console.log(e.target.id)
+    e.preventDefault()
+  }
 
   logOut(e) {
     localStorage.clear()

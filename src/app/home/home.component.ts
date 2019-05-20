@@ -75,6 +75,8 @@ export class HomeComponent implements OnInit {
         'Authorization': this.tokenservice.token
       }) 
     }).then((res) => {
+      console.log(res);
+      
       this.getrest();
     })
     e.preventDefault()

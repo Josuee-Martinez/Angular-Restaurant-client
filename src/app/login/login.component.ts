@@ -9,6 +9,7 @@ import {Router} from '@angular/router';
 export class LoginComponent implements OnInit {
   token = '';
   loginError;
+  loginSuccess;
 
   constructor(private router: Router) { }
 
@@ -40,8 +41,16 @@ export class LoginComponent implements OnInit {
           this.token = data.sessionToken;
           localStorage.setItem('token', data.sessionToken)
           console.log(this.token);
+
+          console.log(data.message);
           
-          this.router.navigate(['home']);
+          this.loginSuccess = data.message;
+
+          setTimeout(() => {
+            this.loginSuccess = '';
+            this.router.navigate(['home']);
+          }, 2000);
+
         }
       }).catch((err) => {
         console.log(err);

@@ -42,7 +42,8 @@ tr, th{
 }
 
 .edit-btn {
-  color: green;
+  color: white;
+  background-color: green;
   font-size: 1.5em;
 }
 

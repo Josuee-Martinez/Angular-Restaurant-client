@@ -1,7 +1,5 @@
-
-
 mat-card {
-  margin-top: 10em;
+  margin-top: 5em;
   padding: 5em;
   background-color: #F4F4F4;
 }
@@ -19,8 +17,14 @@ mat-form-field {
   padding: .5em 4em .5em 4em;
 }
 
-h3 {
-  background-color: rgb(231, 85, 27);
+.error {
+  background-color: rgb(228, 103, 103);
   color: white;
-  margin-top: 1em;
+  text-align: center;
+}
+
+.success {
+  background-color: rgb(176, 255, 152);
+  color: white;
+  text-align: center;
 }
